@@ -5,11 +5,20 @@ const app = express();
 app.listen(3000, () => console.log('Server is up on port 3000.'));
 
 app.get('', (req, res) => {
-    res.send('Hello Express!');
+    res.send('<h1>WEATHER</h1>');
 });
 
 app.get('/help', (req, res) => {
-    res.send('Help Page!');
+    res.send([
+        {
+        name: 'Pepe',
+        age: 40
+        },
+        {
+        name: 'Paco',
+        age: 37
+        }
+    ]);
 })
 
 app.get('/about', (req, res) => {
