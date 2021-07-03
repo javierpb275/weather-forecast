@@ -22,9 +22,18 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/about', (req, res) => {
-    res.send('About Page!');
+    res.send('<h1>ABOUT</h1>');
 });
 
 app.get('/weather', (req, res) => {
-    res.send('Weather Page!');
+    res.send([
+        {
+        location: 'New York',
+        forecast: 'Raining'
+        },
+        {
+        location: 'Los Angeles',
+        forecast: 'Sunny'
+        }
+    ]);
 })
