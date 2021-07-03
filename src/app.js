@@ -8,3 +8,6 @@ app.get('', (req, res) => {
     res.send('Hello Express!');
 });
 
+app.get('/help', (req, res) => {
+    res.send('Help page!');
+})
