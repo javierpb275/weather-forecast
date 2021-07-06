@@ -40,16 +40,18 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
-    res.send([
+    const {address, forecast} = req.query
+    if(!address || !forecast) {
+        return res.send({
+            error: 'You must provide a search term'
+        })
+    }
+    res.send(
         {
-        location: 'New York',
-        forecast: 'Raining'
-        },
-        {
-        location: 'Los Angeles',
-        forecast: 'Sunny'
+        location: address,
+        forecast: forecast
         }
-    ]);
+    );
 })
 
 app.get('/products', (req, res) => {
